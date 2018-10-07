@@ -1,0 +1,43 @@
+<ion-navbar *navbar primary>
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <p text-center>
+      <img text-center src="img/logoLuenceTransparentHeader.png" style="max-height: 55px; padding: 5px;">
+    </p>
+</ion-navbar>
+
+
+<ion-content padding>
+  <ion-header>
+    <h3 text-center text-uppercase bluegray>Liste des Produits</h3>
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  </ion-header>
+    <!-- Spinning icon when loading -->
+    <p text-center>
+      <ion-spinner *ngIf="isLoading" icon="spiral"></ion-spinner>
+    </p>
+
+    <ion-list class="outer-content">
+
+      <button ion-item *ngFor="let obj of response" (click)="itemTapped($event, obj)">
+        <ion-avatar item-left >
+          <img src="{{obj.images[0].src}}"/>
+        </ion-avatar>
+
+        <p bluegray>
+          <b>{{obj.title}}</b>
+        </p>
+
+        <div class="item-note" item-right>
+          <b>{{obj.price}} €</b>
+        </div>
+
+        <p>
+          N°Article: {{obj.id}}
+        </p>
+      </button>
+
+    </ion-list>
+
+</ion-content>

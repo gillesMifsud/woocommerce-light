@@ -1,0 +1,33 @@
+<ion-navbar *navbar primary>
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <p text-center>
+      <img text-center src="img/logoLuenceTransparentHeader.png" style="max-height: 55px; padding: 5px;">
+    </p>
+</ion-navbar>
+
+
+<ion-content padding>
+
+    <h4 text-center primary text-uppercase>Changer de vue sur le handicap</h4>
+
+    <ion-slides padding pager [options]="mySlideOptions" style="height:400px">
+      <ion-slide style="background-image: url('img/modele2.jpg');background-repeat: no-repeat;background-size: cover;">
+        <h2 class="slidetext">Modèle 1</h2>
+      </ion-slide>
+
+      <ion-slide style="background-image: url('img/modele3.jpg');background-repeat: no-repeat;background-size: cover;">
+        <h2 class="slidetext">Modèle 2</h2>
+      </ion-slide>
+
+      <ion-slide style="background-image: url('img/modele_3.jpg');background-repeat: no-repeat;background-size: cover;">
+        <h2 class="slidetext">Modèle 3</h2>
+      </ion-slide>
+    </ion-slides>
+
+    <p text-center>
+      Parce qu’une serie de photos en dit plus qu’un long discours…
+    </p>
+
+</ion-content>

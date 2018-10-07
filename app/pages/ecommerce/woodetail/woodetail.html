@@ -1,0 +1,59 @@
+<ion-navbar *navbar primary>
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <p text-center>
+      <img text-center src="img/logoLuenceTransparentHeader.png" style="max-height: 55px; padding: 5px;">
+    </p>
+</ion-navbar>
+
+<ion-content padding class="woodetail">
+
+  <div class="selection">
+
+    <ion-card>
+      <ion-card-header>
+        <img src="{{selectedItem.images[0].src}}"/>
+        <h2 item-left class="cardHeaderText">{{selectedItem.title}}</h2>
+        <span item-left><em secondary>N°Article: {{selectedItem.id}}</em></span>
+        <span item-right>Prix: <b>{{selectedItem.price}} €</b></span>
+      </ion-card-header>
+
+      <!-- Quantités -->
+      <ion-row>
+        <ion-item>
+          <ion-label>Quantité</ion-label>
+          <ion-input [(ngModel)]="quantity" value="{{quantity}}">{{quantity}}"</ion-input>
+        </ion-item>
+
+        <ion-item item-right>
+          <button class="addButton" small (click)="addQuantity()"><ion-icon name="md-add"></ion-icon></button>
+          <button class="addButton" small (click)="minusQuantity()"><ion-icon name="md-remove"></ion-icon></button>
+        </ion-item>
+      </ion-row>
+      <!-- Boutons -->
+      <ion-row>
+        <button class="orderButton" item-left primary small >Commander</button>
+        <button class="orderButton"item-right primary small>Ajouter</button>
+      </ion-row>
+
+      <ion-card-content>
+        <p text-justify courant [innerHTML]="selectedItem.description"></p>
+
+        <ion-slides pager style="height:250px">
+          <ion-slide *ngFor="let i of selectedItem.images">
+            <img src="{{i.src}}"/>
+          </ion-slide>
+        </ion-slides>
+
+        <br />
+
+        <p text-left primary>Tags: {{selectedItem.tags}}</p>
+        <p text-left primary>Catégories: {{selectedItem.categories}}</p>
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,20 @@
+<ion-navbar *navbar primary>
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <p text-center>
+      <img text-center src="img/logoLuenceTransparentHeader.png" style="max-height: 55px; padding: 5px;">
+    </p>
+</ion-navbar>
+
+<ion-content padding>
+  <!-- <p secondary>
+    {{obj.id}}
+  </p> -->
+  <h2  text-center>
+    <b bluegray [innerHTML]="obj.title.rendered"></b>
+  </h2>
+  <p text-center primary>{{ obj.date  | dateString:"MM/dd/yy"}}</p>
+  <br />
+  <p padding courant text-justify [innerHTML]="obj.content.rendered"></p>
+</ion-content>
